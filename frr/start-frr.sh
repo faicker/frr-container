@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
+DAEMON_FILE="/etc/frr/daemons"
+
+if [[ ! -f  ]]; then
+    echo "$DAEMON_FILE not exist"
+    exit 1
+fi
+
 progs="staticd zebra"
+
 for prg in bgpd ospfd ospf6d ripd ripngd babeld isisd bfdd pimd ldpd nhrpd eigrpd sharpd fabricd; do
-    enabled=0
-    if [[ -f /etc/frr/daemons ]]; then
-        if grep -q "$prg=yes" /etc/frr/daemons; then
-            enabled=1
-        fi
-    fi
-    if [[ -f /etc/frr/$prg.conf ]]; then
-        enabled=1
-    fi
-    if [[ $enabled -eq 1 ]]; then
+    if grep -q "$prg=yes" $DAEMON_FILE; then
         progs=$progs" $prg"
     fi
 done
