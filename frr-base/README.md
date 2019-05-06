@@ -1,3 +1,3 @@
 ## frr
 
-frr based on debian 9.
+frr based on debian 8.
