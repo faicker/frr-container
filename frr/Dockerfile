@@ -1,6 +1,6 @@
 FROM faicker/frr-base:latest
 LABEL maintainer "Faicker Mo <faicker.mo@gmail.com>"
 
-ADD start-frr.sh /start-frr.sh
-RUN chmod a+x start-frr.sh
-ENTRYPOINT ["/start-frr.sh"]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod a+x entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

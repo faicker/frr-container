@@ -1,9 +1,0 @@
-#!/bin/bash
-
-exec 2>&1
-
-prg=bgpd
-if [[ -f /etc/frr/$prg.conf ]]; then
-    echo "Running $prg"
-    exec /usr/lib/frr/$prg -f /etc/frr/$prg.conf
-fi

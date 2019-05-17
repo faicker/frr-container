@@ -1,11 +1,8 @@
-## frr
-
-frr docker image.
+frr docker image with watchfrr.
 
 ## usage
 
-* edit config daemons and zebra.conf or bgpd.conf or other in current directory(see frr example config file).
-* run it,
 ```bash
-docker run -d --privileged -v `pwd`:/etc/frr faicker/frr
+chown -R 104:109 frr.example    # frr:frr
+docker run -it -d --init --rm --privileged -v `pwd`/frr.example:/etc/frr faicker/frr
 ```

@@ -1,3 +1,3 @@
 ## frr
 
-frr based on debian 8.
+frr stable based on jessie(debian 8).
