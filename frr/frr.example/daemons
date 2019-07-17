@@ -14,6 +14,7 @@
 #
 # The watchfrr and zebra daemons are always started.
 #
+zebra=yes
 bgpd=yes
 ospfd=no
 ospf6d=no
@@ -27,6 +28,7 @@ eigrpd=no
 babeld=no
 sharpd=no
 pbrd=no
+staticd=yes
 bfdd=no
 fabricd=no
 
@@ -50,7 +52,7 @@ eigrpd_options=" -A 127.0.0.1"
 babeld_options=" -A 127.0.0.1"
 sharpd_options=" -A 127.0.0.1"
 pbrd_options="   -A 127.0.0.1"
-staticd_options="-A 127.0.0.1"
+staticd_options="-A 0.0.0.0"
 bfdd_options="   -A 127.0.0.1"
 fabricd_options="-A 127.0.0.1"
 

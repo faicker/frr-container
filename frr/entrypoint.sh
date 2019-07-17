@@ -7,8 +7,8 @@ if [[ ! -f $DAEMON_FILE ]]; then
     exit 1
 fi
 
-progs="staticd zebra"
-for prg in bgpd ospfd ospf6d ripd ripngd babeld isisd bfdd pimd ldpd nhrpd eigrpd sharpd fabricd; do
+progs=""
+for prg in zebra bgpd ospfd ospf6d ripd ripngd babeld isisd bfdd pimd ldpd nhrpd eigrpd sharpd fabricd staticd pbrd; do
     if grep -q "$prg=yes" $DAEMON_FILE; then
         progs=$progs" $prg"
     fi
